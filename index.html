@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mijn eerste webpagina</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e8edf5 100%);
+    }
+    h1 {
+      color: #4a47a3;
+    }
+    .kaart {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    button {
+      background: #4a47a3;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #36348a;
+    }
+    #begroeting {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #4a47a3;
+    }
+  </style>
+</head>
+<body>
+  <div class="kaart">
+    <h1>Hallo, ik ben Floris 👋</h1>
+    <p>Dit is mijn allereerste webpagina, gebouwd met git eronder.</p>
+    <button onclick="document.getElementById('begroeting').textContent = 'Je hebt op de knop gedrukt! 🎉'">
+      Klik mij
+    </button>
+    <p id="begroeting"></p>
+  </div>
+</body>
+</html>
