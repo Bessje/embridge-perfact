@@ -5,20 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Embridge × Perfact — Samen sterker in de energietransitie</title>
   <meta name="description" content="Embridge en Perfact Infra: van vergunning tot oplevering. Eén partner voor de hele voorbereiding van uw energietransitie-project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --groen: #1f8a5b;
-      --groen-licht: #e7f4ee;
-      --blauw: #14365c;
-      --blauw-licht: #e8eef5;
-      --donker: #0f1f33;
-      --grijs: #5b6b7d;
-      --lijn: #e2e8f0;
+      /* Perfact huisstijl: donkergrijs + geel (PMS Cool Gray 11 / PMS 3955) */
+      --perfact-grijs: #53565A;
+      --perfact-grijs-licht: #F4F5F5;
+      --perfact-geel: #EFDF00;
+      /* Embridge huisstijl: blauw + groen (milieu/omgeving) */
+      --embridge-blauw: #00529b;
+      --embridge-blauw-licht: #e8eff7;
+      --embridge-groen: #2d8659;
+      --embridge-groen-licht: #e7f3ec;
+      /* Neutraal */
+      --donker: #3a3c40;
+      --grijs: #6b6e73;
+      --lijn: #e3e4e6;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-family: "PT Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
       color: var(--donker);
       line-height: 1.65;
       background: #fff;
@@ -27,10 +36,11 @@
 
     /* HERO */
     header {
-      background: linear-gradient(135deg, var(--blauw) 0%, var(--groen) 140%);
+      background: linear-gradient(135deg, var(--embridge-blauw) 0%, var(--perfact-grijs) 100%);
       color: #fff;
       padding: 90px 0 80px;
       text-align: center;
+      border-bottom: 6px solid var(--perfact-geel);
     }
     .merk {
       font-size: 14px;
@@ -63,7 +73,7 @@
       font-size: 16px;
       transition: transform .15s ease, box-shadow .15s ease;
     }
-    .knop-primair { background: #fff; color: var(--blauw); }
+    .knop-primair { background: var(--perfact-geel); color: var(--donker); }
     .knop-rand { border: 2px solid rgba(255,255,255,.6); color: #fff; }
     .knop:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
 
@@ -74,7 +84,7 @@
       font-size: clamp(24px, 3.5vw, 34px);
       font-weight: 800;
       margin-bottom: 14px;
-      color: var(--blauw);
+      color: var(--perfact-grijs);
     }
     .lead { font-size: 18px; color: var(--grijs); max-width: 720px; margin-bottom: 36px; }
     .midden { text-align: center; }
@@ -90,10 +100,10 @@
       box-shadow: 0 4px 20px rgba(15,31,51,.05);
     }
     .kaart h3 { font-size: 24px; margin-bottom: 6px; }
-    .kaart.embridge { border-top: 5px solid var(--groen); }
-    .kaart.perfact { border-top: 5px solid var(--blauw); }
-    .kaart.embridge h3 { color: var(--groen); }
-    .kaart.perfact h3 { color: var(--blauw); }
+    .kaart.embridge { border-top: 5px solid var(--embridge-blauw); }
+    .kaart.perfact { border-top: 5px solid var(--perfact-geel); }
+    .kaart.embridge h3 { color: var(--embridge-blauw); }
+    .kaart.perfact h3 { color: var(--perfact-grijs); }
     .kaart .rol { color: var(--grijs); font-size: 15px; margin-bottom: 18px; }
     .kaart ul { list-style: none; }
     .kaart li { padding: 7px 0 7px 26px; position: relative; font-size: 15px; border-bottom: 1px solid var(--lijn); }
@@ -103,8 +113,8 @@
       position: absolute; left: 4px; top: 15px;
       width: 8px; height: 8px; border-radius: 50%;
     }
-    .kaart.embridge li::before { background: var(--groen); }
-    .kaart.perfact li::before { background: var(--blauw); }
+    .kaart.embridge li::before { background: var(--embridge-groen); }
+    .kaart.perfact li::before { background: var(--perfact-grijs); }
 
     /* FASES */
     .fasestroom {
@@ -116,18 +126,23 @@
       padding: 22px 18px; text-align: center; position: relative;
     }
     .fase .nr { font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--grijs); text-transform: uppercase; }
-    .fase h4 { font-size: 17px; margin: 8px 0; color: var(--blauw); }
-    .fase .door { font-size: 13px; color: var(--groen); font-weight: 600; }
+    .fase h4 { font-size: 17px; margin: 8px 0; color: var(--perfact-grijs); }
+    .fase .door { font-size: 13px; color: var(--grijs); font-weight: 700; }
     .fasestroom > .fase { flex: 1 1 190px; align-self: center; }
-    .fase.resultaat { background: var(--blauw); border-color: var(--blauw); }
-    .fase.resultaat .nr { color: rgba(255,255,255,.7); }
+    /* merkaccenten per fase */
+    .fase.f-embridge { border-left: 4px solid var(--embridge-blauw); }
+    .fase.f-embridge .door { color: var(--embridge-blauw); }
+    .fase.f-perfact { border-left: 4px solid var(--perfact-geel); }
+    .fase.f-perfact .door { color: var(--perfact-grijs); }
+    .fase.resultaat { background: var(--donker); border-color: var(--donker); border-left: 4px solid var(--perfact-geel); }
+    .fase.resultaat .nr { color: var(--perfact-geel); }
     .fase.resultaat h4, .fase.resultaat .door { color: #fff; }
 
     /* Parallel duo: fase 1 & 2 lopen gelijk op */
     .parallel {
       flex: 1.4 1 240px;
-      border: 2px dashed var(--groen);
-      background: var(--groen-licht);
+      border: 2px dashed var(--grijs);
+      background: var(--perfact-grijs-licht);
       border-radius: 16px;
       padding: 30px 14px 16px;
       position: relative;
@@ -135,11 +150,10 @@
     }
     .parallel-label {
       position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-      background: var(--groen); color: #fff; font-size: 12px; font-weight: 700;
+      background: var(--donker); color: #fff; font-size: 12px; font-weight: 700;
       letter-spacing: .5px; padding: 4px 14px; border-radius: 20px; white-space: nowrap;
     }
-    .parallel .fase { border-left: 4px solid var(--groen); }
-    .koppel { text-align: center; color: var(--groen); line-height: 1.1; }
+    .koppel { text-align: center; color: var(--grijs); line-height: 1.1; }
     .koppel .pijl-icoon { font-size: 22px; font-weight: 700; display: block; }
     .koppel small { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
     .pijl {
@@ -155,18 +169,18 @@
     /* VOORDELEN */
     .voordelen { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .vblok h3 { font-size: 22px; margin-bottom: 16px; }
-    .vblok.aannemers h3 { color: var(--groen); }
-    .vblok.netbeheerders h3 { color: var(--blauw); }
+    .vblok.aannemers h3 { color: var(--perfact-grijs); }
+    .vblok.netbeheerders h3 { color: var(--embridge-blauw); }
     .vblok ul { list-style: none; }
     .vblok li { padding: 10px 0 10px 32px; position: relative; font-size: 16px; }
     .vblok li::before {
       content: "✓"; position: absolute; left: 0; top: 9px;
-      font-weight: 700; color: var(--groen);
+      font-weight: 700; color: var(--embridge-groen);
     }
 
     /* PITCH */
     .pitch {
-      background: linear-gradient(135deg, var(--blauw) 0%, var(--groen) 160%);
+      background: linear-gradient(135deg, var(--embridge-blauw) 0%, var(--perfact-grijs) 100%);
       color: #fff; text-align: center;
     }
     .pitch blockquote {
@@ -188,12 +202,18 @@
     .qr-box p { font-size: 14px; color: var(--grijs); }
     .contacten { display: grid; gap: 20px; }
     .contactkaart { border-left: 4px solid var(--lijn); padding: 6px 0 6px 18px; }
-    .contactkaart.embridge { border-color: var(--groen); }
-    .contactkaart.perfact { border-color: var(--blauw); }
+    .contactkaart.embridge { border-color: var(--embridge-blauw); }
+    .contactkaart.perfact { border-color: var(--perfact-geel); }
     .contactkaart strong { display: block; font-size: 18px; }
     .contactkaart span { color: var(--grijs); font-size: 15px; }
-    .contactkaart a { color: var(--blauw); text-decoration: none; font-weight: 600; }
+    .contactkaart a { color: var(--embridge-blauw); text-decoration: none; font-weight: 700; }
     .contactkaart a:hover { text-decoration: underline; }
+    /* Perfact wordmerk (logo-stijl) */
+    .perfact-wm { font-weight: 700; letter-spacing: -.5px; font-size: 18px; }
+    .perfact-wm .licht { color: #a0a2a5; }
+    .perfact-wm .donker { color: var(--perfact-grijs); }
+    .perfact-wm .f { border-bottom: 2px solid var(--perfact-grijs); padding-bottom: 1px; }
+    .payoff { color: var(--grijs); font-size: 12px; font-style: italic; }
 
     footer {
       background: var(--donker); color: rgba(255,255,255,.7);
@@ -202,7 +222,6 @@
 
     @media (max-width: 760px) {
       .duo, .voordelen, .contact-grid { grid-template-columns: 1fr; }
-      .fases { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -280,7 +299,7 @@
       <div class="fasestroom">
         <div class="parallel">
           <span class="parallel-label">Lopen parallel op</span>
-          <div class="fase">
+          <div class="fase f-embridge">
             <div class="nr">Fase 1</div>
             <h4>Omgeving &amp; Vergunningen</h4>
             <div class="door">Embridge</div>
@@ -289,14 +308,14 @@
             <span class="pijl-icoon">&#8645;</span>
             <small>wisselen onderling uit</small>
           </div>
-          <div class="fase">
+          <div class="fase f-perfact">
             <div class="nr">Fase 2</div>
             <h4>Engineering &amp; Ontwerp</h4>
             <div class="door">Perfact + Embridge</div>
           </div>
         </div>
         <div class="pijl">&#8594;</div>
-        <div class="fase">
+        <div class="fase f-perfact">
           <div class="nr">Fase 3</div>
           <h4>Werkvoorbereiding &amp; Realisatie</h4>
           <div class="door">Perfact</div>
@@ -367,7 +386,7 @@
             <span>Miguel Blokland · <a href="https://www.embridge.nl" target="_blank" rel="noopener">www.embridge.nl</a></span>
           </div>
           <div class="contactkaart perfact">
-            <strong>Perfact Group</strong>
+            <strong><span class="perfact-wm"><span class="licht">per</span><span class="donker"><span class="f">f</span>act</span></span> Group <span class="payoff">— Make the difference</span></strong>
             <span>Floris Bessems · <a href="https://www.perfact-group.com" target="_blank" rel="noopener">www.perfact-group.com</a></span>
           </div>
         </div>
@@ -393,7 +412,7 @@
       text: doel,
       width: 200,
       height: 200,
-      colorDark: "#14365c",
+      colorDark: "#53565A",
       colorLight: "#ffffff"
     });
   </script>
