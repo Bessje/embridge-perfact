@@ -3,53 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mijn eerste webpagina</title>
+  <title>Embridge × Perfact — Samen sterker in de energietransitie</title>
+  <meta name="description" content="Embridge en Perfact Infra: van vergunning tot oplevering. Eén partner voor de hele voorbereiding van uw energietransitie-project.">
   <style>
+    :root {
+      --groen: #1f8a5b;
+      --groen-licht: #e7f4ee;
+      --blauw: #14365c;
+      --blauw-licht: #e8eef5;
+      --donker: #0f1f33;
+      --grijs: #5b6b7d;
+      --lijn: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, sans-serif;
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #1a1a2e;
-      background: linear-gradient(135deg, #f5f7fa 0%, #e8edf5 100%);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--donker);
+      line-height: 1.65;
+      background: #fff;
     }
-    h1 {
-      color: #4a47a3;
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* HERO */
+    header {
+      background: linear-gradient(135deg, var(--blauw) 0%, var(--groen) 140%);
+      color: #fff;
+      padding: 90px 0 80px;
+      text-align: center;
     }
-    .kaart {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    .merk {
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 700;
+      opacity: 0.9;
+      margin-bottom: 24px;
     }
-    button {
-      background: #4a47a3;
-      color: white;
-      border: none;
-      padding: 12px 24px;
+    .merk span { opacity: 0.6; margin: 0 10px; }
+    header h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    header p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.92;
+    }
+    .knoppen { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .knop {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
       font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    button:hover {
-      background: #36348a;
+    .knop-primair { background: #fff; color: var(--blauw); }
+    .knop-rand { border: 2px solid rgba(255,255,255,.6); color: #fff; }
+    .knop:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+
+    /* SECTIES */
+    section { padding: 70px 0; }
+    section:nth-child(even) { background: #f8fafc; }
+    h2 {
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--blauw);
     }
-    #begroeting {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #4a47a3;
+    .lead { font-size: 18px; color: var(--grijs); max-width: 720px; margin-bottom: 36px; }
+    .midden { text-align: center; }
+    .midden .lead { margin-left: auto; margin-right: auto; }
+
+    /* WIE ZIJN WIJ */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .kaart {
+      background: #fff;
+      border: 1px solid var(--lijn);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(15,31,51,.05);
+    }
+    .kaart h3 { font-size: 24px; margin-bottom: 6px; }
+    .kaart.embridge { border-top: 5px solid var(--groen); }
+    .kaart.perfact { border-top: 5px solid var(--blauw); }
+    .kaart.embridge h3 { color: var(--groen); }
+    .kaart.perfact h3 { color: var(--blauw); }
+    .kaart .rol { color: var(--grijs); font-size: 15px; margin-bottom: 18px; }
+    .kaart ul { list-style: none; }
+    .kaart li { padding: 7px 0 7px 26px; position: relative; font-size: 15px; border-bottom: 1px solid var(--lijn); }
+    .kaart li:last-child { border-bottom: none; }
+    .kaart li::before {
+      content: "";
+      position: absolute; left: 4px; top: 15px;
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .kaart.embridge li::before { background: var(--groen); }
+    .kaart.perfact li::before { background: var(--blauw); }
+
+    /* FASES */
+    .fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+    .fase {
+      background: #fff; border: 1px solid var(--lijn); border-radius: 14px;
+      padding: 24px 18px; text-align: center; position: relative;
+    }
+    .fase .nr { font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--grijs); text-transform: uppercase; }
+    .fase h4 { font-size: 17px; margin: 8px 0; color: var(--blauw); }
+    .fase .door { font-size: 13px; color: var(--groen); font-weight: 600; }
+    .fase.resultaat { background: var(--blauw); border-color: var(--blauw); }
+    .fase.resultaat .nr { color: rgba(255,255,255,.7); }
+    .fase.resultaat h4, .fase.resultaat .door { color: #fff; }
+
+    /* VOORDELEN */
+    .voordelen { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .vblok h3 { font-size: 22px; margin-bottom: 16px; }
+    .vblok.aannemers h3 { color: var(--groen); }
+    .vblok.netbeheerders h3 { color: var(--blauw); }
+    .vblok ul { list-style: none; }
+    .vblok li { padding: 10px 0 10px 32px; position: relative; font-size: 16px; }
+    .vblok li::before {
+      content: "✓"; position: absolute; left: 0; top: 9px;
+      font-weight: 700; color: var(--groen);
+    }
+
+    /* PITCH */
+    .pitch {
+      background: linear-gradient(135deg, var(--blauw) 0%, var(--groen) 160%);
+      color: #fff; text-align: center;
+    }
+    .pitch blockquote {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 600; line-height: 1.5;
+      max-width: 820px; margin: 0 auto;
+    }
+    .pitch blockquote::before { content: "“"; }
+    .pitch blockquote::after { content: "”"; }
+
+    /* QR / CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+    .qr-box {
+      background: #fff; border: 1px solid var(--lijn); border-radius: 16px;
+      padding: 28px; text-align: center; box-shadow: 0 4px 20px rgba(15,31,51,.06);
+    }
+    #qr { display: inline-block; margin: 0 auto 14px; }
+    #qr img, #qr canvas { display: block; }
+    .qr-box p { font-size: 14px; color: var(--grijs); }
+    .contacten { display: grid; gap: 20px; }
+    .contactkaart { border-left: 4px solid var(--lijn); padding: 6px 0 6px 18px; }
+    .contactkaart.embridge { border-color: var(--groen); }
+    .contactkaart.perfact { border-color: var(--blauw); }
+    .contactkaart strong { display: block; font-size: 18px; }
+    .contactkaart span { color: var(--grijs); font-size: 15px; }
+    .contactkaart a { color: var(--blauw); text-decoration: none; font-weight: 600; }
+    .contactkaart a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--donker); color: rgba(255,255,255,.7);
+      text-align: center; padding: 30px 0; font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .duo, .voordelen, .contact-grid { grid-template-columns: 1fr; }
+      .fases { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="kaart">
-    <h1>Hallo, ik ben Floris 👋</h1>
-    <p>Dit is mijn allereerste webpagina, gebouwd met git eronder.</p>
-    <button onclick="document.getElementById('begroeting').textContent = 'Je hebt op de knop gedrukt! 🎉'">
-      Klik mij
-    </button>
-    <p id="begroeting"></p>
-  </div>
+
+  <header>
+    <div class="wrap">
+      <div class="merk">Embridge <span>×</span> Perfact</div>
+      <h1>Samen sterker in de energietransitie</h1>
+      <p>Van vergunning tot oplevering — één partnerschap dat uw project ontlast, versnelt en de kwaliteit borgt.</p>
+      <div class="knoppen">
+        <a class="knop knop-primair" href="#propositie">Onze propositie</a>
+        <a class="knop knop-rand" href="#contact">Neem contact op</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>De opgave is enorm — en de klok tikt</h2>
+      <p class="lead">
+        Nederland moet zijn energienet verdubbelen om de transitie bij te benen. Netcongestie,
+        personeelstekort en groeiende regeldruk remmen de uitvoering. Aannemers en netbeheerders
+        lopen vast in de voorbereiding en dreigen deadlines te missen.
+      </p>
+      <p class="lead" style="margin-bottom:0;">
+        Dat is precies de opening voor een sterk partnerschap dat <strong>ontlast, versnelt en
+        kwaliteit borgt</strong> — van vergunning tot oplevering.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Wie zijn wij?</h2>
+      <p class="lead">Twee specialisten die elkaar perfect aanvullen.</p>
+      <div class="duo">
+        <div class="kaart embridge">
+          <h3>Embridge</h3>
+          <p class="rol">Full-service partner voor milieu- en omgevingsvraagstukken. Embridge slaat de brug tussen onderneming en omgeving — van vergunning tot MER, van ecologie tot bodem.</p>
+          <ul>
+            <li>Vergunningen &amp; compliance</li>
+            <li>Ecologie &amp; biodiversiteit</li>
+            <li>Bodem &amp; bodemsanering</li>
+            <li>MER en m.e.r.-procedure</li>
+            <li>Omgevingsadvies &amp; procesmanagement</li>
+            <li>Ontplofbare oorlogsresten (OO)</li>
+            <li>Akoestiek &amp; luchtkwaliteit</li>
+          </ul>
+        </div>
+        <div class="kaart perfact">
+          <h3>Perfact Infra</h3>
+          <p class="rol">Specialist in projectmanagement, engineering en capaciteitsinzet voor de ondergrondse infra. Perfact verbindt mens, kennis en techniek om verduurzamingsprojecten te versnellen.</p>
+          <ul>
+            <li>Projectmanagement &amp; engineering</li>
+            <li>Werkvoorbereiding &amp; uitvoeringscoördinatie</li>
+            <li>Cost control &amp; planning</li>
+            <li>Big data &amp; advanced analytics</li>
+            <li>Strategische &amp; tactische consultancy</li>
+            <li>Kennis &amp; capaciteitsinzet (incl. QA/QC &amp; HSE)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="propositie">
+    <div class="wrap">
+      <h2>Onze gezamenlijke propositie</h2>
+      <p class="lead">
+        Waar Embridge de omgeving ontgrendelt, brengt Perfact de uitvoering tot leven. Samen bieden
+        wij aannemers en netbeheerders een <strong>end-to-end ontzorgingspakket</strong> — van de
+        eerste vergunningsscan tot het opgeleverde werkpakket.
+      </p>
+      <div class="fases">
+        <div class="fase">
+          <div class="nr">Fase 1</div>
+          <h4>Omgeving &amp; Vergunningen</h4>
+          <div class="door">Embridge</div>
+        </div>
+        <div class="fase">
+          <div class="nr">Fase 2</div>
+          <h4>Engineering &amp; Ontwerp</h4>
+          <div class="door">Perfact + Embridge</div>
+        </div>
+        <div class="fase">
+          <div class="nr">Fase 3</div>
+          <h4>Werkvoorbereiding &amp; Realisatie</h4>
+          <div class="door">Perfact</div>
+        </div>
+        <div class="fase resultaat">
+          <div class="nr">Resultaat</div>
+          <h4>Snellere oplevering, minder faalkosten</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Wat levert het op voor u?</h2>
+      <p class="lead">Concrete voordelen, afgestemd op uw rol in de keten.</p>
+      <div class="voordelen">
+        <div class="vblok aannemers">
+          <h3>Voor aannemers</h3>
+          <ul>
+            <li>Directe reductie van faalkosten</li>
+            <li>Kortere voorbereidingsdoorlooptijd</li>
+            <li>Extra engineering-capaciteit zonder vaste lasten</li>
+            <li>Ontzorging vergunningen, ecologie, bodem &amp; OO</li>
+            <li>Fixed-price / meterprijs — voorspelbare kosten</li>
+            <li>Aansluiting bij beweging in de markt</li>
+          </ul>
+        </div>
+        <div class="vblok netbeheerders">
+          <h3>Voor netbeheerders</h3>
+          <ul>
+            <li>Versnelling vergunningentrajecten</li>
+            <li>Betere assetdata &amp; datagedreven sturing</li>
+            <li>Uitvoerbare werkpakketten met kostenraming (UAV)</li>
+            <li>Professionalisering van de keten</li>
+            <li>Vroegtijdig inzicht in risico's &amp; randvoorwaarden</li>
+            <li>Compactstations: locatiebepaling &amp; omgevingsadvies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch">
+    <div class="wrap">
+      <blockquote>
+        De energietransitie vraagt om snelheid én zorgvuldigheid. Wij leveren beide. Embridge
+        ontgrendelt de omgeving, Perfact ontwerpt de executie. Samen brengen wij uw project van
+        vergunning naar oplevering — zonder verrassingen.
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Meer weten?</h2>
+      <p class="lead">Scan de QR-code om deze pagina op uw telefoon te openen of te delen, en neem gerust contact met ons op.</p>
+      <div class="contact-grid">
+        <div class="contacten">
+          <div class="contactkaart embridge">
+            <strong>Embridge Nederland</strong>
+            <span>Miguel Blokland · <a href="https://www.embridge.nl" target="_blank" rel="noopener">www.embridge.nl</a></span>
+          </div>
+          <div class="contactkaart perfact">
+            <strong>Perfact Group</strong>
+            <span>Floris Bessems · <a href="https://www.perfact-group.com" target="_blank" rel="noopener">www.perfact-group.com</a></span>
+          </div>
+        </div>
+        <div class="qr-box">
+          <div id="qr"></div>
+          <p>Scan om deze pagina te openen</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">Embridge × Perfact — Samen sterker in de energietransitie</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
+  <script>
+    // De URL waar deze pagina online staat. Laat leeg om automatisch het huidige adres te gebruiken.
+    // Vul hier na het hosten je definitieve adres in, bv: "https://floris.github.io/embridge-perfact/"
+    var paginaURL = "";
+    var doel = paginaURL || window.location.href;
+    new QRCode(document.getElementById("qr"), {
+      text: doel,
+      width: 200,
+      height: 200,
+      colorDark: "#14365c",
+      colorLight: "#ffffff"
+    });
+  </script>
+
 </body>
 </html>
