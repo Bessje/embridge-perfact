@@ -14,11 +14,11 @@
       --perfact-grijs: #53565A;
       --perfact-grijs-licht: #F4F5F5;
       --perfact-geel: #EFDF00;
-      /* Embridge huisstijl: blauw + groen (milieu/omgeving) */
-      --embridge-blauw: #00529b;
-      --embridge-blauw-licht: #e8eff7;
-      --embridge-groen: #2d8659;
-      --embridge-groen-licht: #e7f3ec;
+      /* Embridge huisstijl: blauw + teal (uit hun logo) */
+      --embridge-blauw: #004B98;
+      --embridge-blauw-licht: #e6edf5;
+      --embridge-teal: #69BEBC;
+      --embridge-teal-licht: #eaf6f5;
       /* Neutraal */
       --donker: #3a3c40;
       --grijs: #6b6e73;
@@ -58,7 +58,7 @@
     .hero-slide:nth-child(4) { animation-delay: 24s; }
     .hero-overlay {
       position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(135deg, rgba(0,82,155,.82) 0%, rgba(58,60,64,.86) 100%);
+      background: linear-gradient(135deg, rgba(0,75,152,.82) 0%, rgba(58,60,64,.86) 100%);
     }
     header .wrap { position: relative; z-index: 2; }
     header h1, header p, .merk { text-shadow: 0 2px 18px rgba(0,0,0,.35); }
@@ -92,7 +92,7 @@
     .band-slide:nth-child(5) { animation-delay: 28s; }
     .band-overlay {
       position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(0deg, rgba(58,60,64,.78) 0%, rgba(0,82,155,.30) 100%);
+      background: linear-gradient(0deg, rgba(58,60,64,.78) 0%, rgba(0,75,152,.30) 100%);
     }
     .band-tekst {
       position: absolute; inset: 0; z-index: 2;
@@ -179,7 +179,7 @@
       position: absolute; left: 4px; top: 15px;
       width: 8px; height: 8px; border-radius: 50%;
     }
-    .kaart.embridge li::before { background: var(--embridge-groen); }
+    .kaart.embridge li::before { background: var(--embridge-teal); }
     .kaart.perfact li::before { background: var(--perfact-grijs); }
 
     /* FASES */
@@ -241,7 +241,7 @@
     .vblok li { padding: 10px 0 10px 32px; position: relative; font-size: 16px; }
     .vblok li::before {
       content: "✓"; position: absolute; left: 0; top: 9px;
-      font-weight: 700; color: var(--embridge-groen);
+      font-weight: 700; color: var(--embridge-teal);
     }
 
     /* PITCH */
