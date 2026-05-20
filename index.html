@@ -270,9 +270,10 @@
     .contactkaart { border-left: 4px solid var(--lijn); padding: 6px 0 6px 18px; }
     .contactkaart.embridge { border-color: var(--embridge-blauw); }
     .contactkaart.perfact { border-color: var(--perfact-geel); }
-    .contactkaart strong { display: block; font-size: 18px; }
+    .contactkaart strong { display: block; font-size: 18px; margin-bottom: 6px; }
     .contactkaart span { color: var(--grijs); font-size: 15px; }
-    .contactkaart a { color: var(--embridge-blauw); text-decoration: none; font-weight: 700; }
+    .contactkaart .pers { display: block; color: var(--donker); font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+    .contactkaart a { display: block; width: fit-content; color: var(--embridge-blauw); text-decoration: none; font-weight: 600; font-size: 15px; line-height: 1.75; }
     .contactkaart a:hover { text-decoration: underline; }
     /* Perfact wordmerk (logo-stijl) */
     .perfact-wm { font-weight: 700; letter-spacing: -.5px; font-size: 18px; }
@@ -478,11 +479,17 @@
         <div class="contacten">
           <div class="contactkaart embridge">
             <strong>Embridge Nederland</strong>
-            <span>Miguel Blokland · <a href="https://www.embridge.nl" target="_blank" rel="noopener">www.embridge.nl</a></span>
+            <span class="pers">Miguel Blokland</span>
+            <a href="tel:+31622610294">06 22 61 02 94</a>
+            <a href="mailto:miguel@embridge.nl">miguel@embridge.nl</a>
+            <a href="https://www.embridge.nl" target="_blank" rel="noopener">www.embridge.nl</a>
           </div>
           <div class="contactkaart perfact">
             <strong><span class="perfact-wm"><span class="licht">per</span><span class="donker"><span class="f">f</span>act</span></span> Group <span class="payoff">— Make the difference</span></strong>
-            <span>Floris Bessems · <a href="https://www.perfact-group.com" target="_blank" rel="noopener">www.perfact-group.com</a></span>
+            <span class="pers">Floris Bessems</span>
+            <a href="tel:+31616115402">06 16 11 54 02</a>
+            <a href="mailto:florisbessems@perfact-group.com">florisbessems@perfact-group.com</a>
+            <a href="https://www.perfact-group.com" target="_blank" rel="noopener">www.perfact-group.com</a>
           </div>
         </div>
         <div class="qr-box">
