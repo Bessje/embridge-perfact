@@ -107,17 +107,50 @@
     .kaart.perfact li::before { background: var(--blauw); }
 
     /* FASES */
-    .fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+    .fasestroom {
+      display: flex; align-items: stretch; justify-content: center;
+      gap: 14px; margin-top: 28px; flex-wrap: wrap;
+    }
     .fase {
       background: #fff; border: 1px solid var(--lijn); border-radius: 14px;
-      padding: 24px 18px; text-align: center; position: relative;
+      padding: 22px 18px; text-align: center; position: relative;
     }
     .fase .nr { font-size: 13px; font-weight: 700; letter-spacing: 1px; color: var(--grijs); text-transform: uppercase; }
     .fase h4 { font-size: 17px; margin: 8px 0; color: var(--blauw); }
     .fase .door { font-size: 13px; color: var(--groen); font-weight: 600; }
+    .fasestroom > .fase { flex: 1 1 190px; align-self: center; }
     .fase.resultaat { background: var(--blauw); border-color: var(--blauw); }
     .fase.resultaat .nr { color: rgba(255,255,255,.7); }
     .fase.resultaat h4, .fase.resultaat .door { color: #fff; }
+
+    /* Parallel duo: fase 1 & 2 lopen gelijk op */
+    .parallel {
+      flex: 1.4 1 240px;
+      border: 2px dashed var(--groen);
+      background: var(--groen-licht);
+      border-radius: 16px;
+      padding: 30px 14px 16px;
+      position: relative;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .parallel-label {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--groen); color: #fff; font-size: 12px; font-weight: 700;
+      letter-spacing: .5px; padding: 4px 14px; border-radius: 20px; white-space: nowrap;
+    }
+    .parallel .fase { border-left: 4px solid var(--groen); }
+    .koppel { text-align: center; color: var(--groen); line-height: 1.1; }
+    .koppel .pijl-icoon { font-size: 22px; font-weight: 700; display: block; }
+    .koppel small { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+    .pijl {
+      flex: 0 0 auto; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: var(--grijs); font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .fasestroom { flex-direction: column; align-items: stretch; }
+      .pijl { transform: rotate(90deg); padding: 4px 0; }
+    }
 
     /* VOORDELEN */
     .voordelen { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -244,22 +277,31 @@
         wij aannemers en netbeheerders een <strong>end-to-end ontzorgingspakket</strong> — van de
         eerste vergunningsscan tot het opgeleverde werkpakket.
       </p>
-      <div class="fases">
-        <div class="fase">
-          <div class="nr">Fase 1</div>
-          <h4>Omgeving &amp; Vergunningen</h4>
-          <div class="door">Embridge</div>
+      <div class="fasestroom">
+        <div class="parallel">
+          <span class="parallel-label">Lopen parallel op</span>
+          <div class="fase">
+            <div class="nr">Fase 1</div>
+            <h4>Omgeving &amp; Vergunningen</h4>
+            <div class="door">Embridge</div>
+          </div>
+          <div class="koppel">
+            <span class="pijl-icoon">&#8645;</span>
+            <small>wisselen onderling uit</small>
+          </div>
+          <div class="fase">
+            <div class="nr">Fase 2</div>
+            <h4>Engineering &amp; Ontwerp</h4>
+            <div class="door">Perfact + Embridge</div>
+          </div>
         </div>
-        <div class="fase">
-          <div class="nr">Fase 2</div>
-          <h4>Engineering &amp; Ontwerp</h4>
-          <div class="door">Perfact + Embridge</div>
-        </div>
+        <div class="pijl">&#8594;</div>
         <div class="fase">
           <div class="nr">Fase 3</div>
           <h4>Werkvoorbereiding &amp; Realisatie</h4>
           <div class="door">Perfact</div>
         </div>
+        <div class="pijl">&#8594;</div>
         <div class="fase resultaat">
           <div class="nr">Resultaat</div>
           <h4>Snellere oplevering, minder faalkosten</h4>
