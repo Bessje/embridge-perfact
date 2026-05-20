@@ -257,16 +257,16 @@
     .pitch blockquote::before { content: "“"; }
     .pitch blockquote::after { content: "”"; }
 
-    /* QR / CONTACT */
-    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
-    .qr-box {
+    /* CONTACT + logo-lockup */
+    .logo-lockup {
+      display: flex; align-items: center; justify-content: center; gap: 36px;
+      flex-wrap: wrap; max-width: 680px; margin: 0 auto 44px;
       background: #fff; border: 1px solid var(--lijn); border-radius: 16px;
-      padding: 28px; text-align: center; box-shadow: 0 4px 20px rgba(15,31,51,.06);
+      padding: 30px 40px; box-shadow: 0 4px 20px rgba(58,60,64,.06);
     }
-    #qr { display: inline-block; margin: 0 auto 14px; }
-    #qr img, #qr canvas { display: block; }
-    .qr-box p { font-size: 14px; color: var(--grijs); }
-    .contacten { display: grid; gap: 20px; }
+    .logo-lockup img { height: 48px; width: auto; display: block; }
+    .logo-lockup .ll-x { font-size: 30px; color: var(--grijs); font-weight: 300; }
+    .contacten { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .contactkaart { border-left: 4px solid var(--lijn); padding: 6px 0 6px 18px; }
     .contactkaart.embridge { border-color: var(--embridge-blauw); }
     .contactkaart.perfact { border-color: var(--perfact-geel); }
@@ -474,27 +474,26 @@
   <section id="contact">
     <div class="wrap">
       <h2>Meer weten?</h2>
-      <p class="lead">Scan de QR-code om deze pagina op uw telefoon te openen of te delen, en neem gerust contact met ons op.</p>
-      <div class="contact-grid">
-        <div class="contacten">
-          <div class="contactkaart embridge">
-            <strong>Embridge Nederland</strong>
-            <span class="pers">Miguel Blokland</span>
-            <a href="tel:+31622610294">06 22 61 02 94</a>
-            <a href="mailto:miguel@embridge.nl">miguel@embridge.nl</a>
-            <a href="https://www.embridge.nl" target="_blank" rel="noopener">www.embridge.nl</a>
-          </div>
-          <div class="contactkaart perfact">
-            <strong><span class="perfact-wm"><span class="licht">per</span><span class="donker"><span class="f">f</span>act</span></span> Group <span class="payoff">— Make the difference</span></strong>
-            <span class="pers">Floris Bessems</span>
-            <a href="tel:+31616115402">06 16 11 54 02</a>
-            <a href="mailto:florisbessems@perfact-group.com">florisbessems@perfact-group.com</a>
-            <a href="https://www.perfact-group.com" target="_blank" rel="noopener">www.perfact-group.com</a>
-          </div>
+      <p class="lead">Benieuwd hoe wij úw project kunnen versnellen? Neem gerust contact met ons op.</p>
+      <div class="logo-lockup">
+        <img src="images/embridge-logo.svg" alt="Embridge logo">
+        <span class="ll-x">×</span>
+        <img src="images/perfact-logo-plat.png" alt="Perfact Group logo">
+      </div>
+      <div class="contacten">
+        <div class="contactkaart embridge">
+          <strong>Embridge Nederland</strong>
+          <span class="pers">Miguel Blokland</span>
+          <a href="tel:+31622610294">06 22 61 02 94</a>
+          <a href="mailto:miguel@embridge.nl">miguel@embridge.nl</a>
+          <a href="https://www.embridge.nl" target="_blank" rel="noopener">www.embridge.nl</a>
         </div>
-        <div class="qr-box">
-          <div id="qr"></div>
-          <p>Scan om deze pagina te openen</p>
+        <div class="contactkaart perfact">
+          <strong><span class="perfact-wm"><span class="licht">per</span><span class="donker"><span class="f">f</span>act</span></span> Group <span class="payoff">— Make the difference</span></strong>
+          <span class="pers">Floris Bessems</span>
+          <a href="tel:+31616115402">06 16 11 54 02</a>
+          <a href="mailto:florisbessems@perfact-group.com">florisbessems@perfact-group.com</a>
+          <a href="https://www.perfact-group.com" target="_blank" rel="noopener">www.perfact-group.com</a>
         </div>
       </div>
     </div>
@@ -504,20 +503,6 @@
     <div class="wrap">Embridge × Perfact — Samen sterker in de energietransitie</div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
-  <script>
-    // De URL waar deze pagina online staat. Laat leeg om automatisch het huidige adres te gebruiken.
-    // Definitief adres via GitHub Pages:
-    var paginaURL = "https://bessje.github.io/embridge-perfact/";
-    var doel = paginaURL || window.location.href;
-    new QRCode(document.getElementById("qr"), {
-      text: doel,
-      width: 200,
-      height: 200,
-      colorDark: "#53565A",
-      colorLight: "#ffffff"
-    });
-  </script>
   <script>
     // Secties subtiel laten infaden bij het scrollen
     (function () {

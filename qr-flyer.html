@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>QR — Embridge × Perfact</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: "PT Sans", "Segoe UI", system-ui, sans-serif;
+    color: #3a3c40;
+  }
+  .page {
+    width: 210mm; height: 297mm;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  /* Kopband */
+  .kop {
+    background: linear-gradient(135deg, #00529b 0%, #53565A 100%);
+    color: #fff; text-align: center;
+    padding: 24mm 18mm 18mm;
+    border-bottom: 5mm solid #EFDF00;
+  }
+  .merk { font-size: 30pt; font-weight: 700; letter-spacing: 6px; text-transform: uppercase; }
+  .merk .x { color: #EFDF00; margin: 0 8px; }
+  .tagline { font-size: 15pt; margin-top: 8mm; opacity: .95; }
+  /* Body */
+  .body {
+    flex: 1; text-align: center;
+    padding: 18mm 18mm 0;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .body h1 { font-size: 24pt; color: #53565A; font-weight: 700; }
+  .body .sub { font-size: 13pt; color: #6b6e73; max-width: 150mm; margin: 6mm auto 0; line-height: 1.5; }
+  .qr-card {
+    margin-top: 12mm;
+    background: #fff; border: 1pt solid #e3e4e6;
+    border-radius: 6mm; padding: 9mm;
+    box-shadow: 0 4mm 14mm rgba(0,0,0,.08);
+  }
+  .qr-card img { width: 78mm; height: 78mm; display: block; }
+  .url {
+    margin-top: 9mm; font-size: 15pt; font-weight: 700; color: #00529b;
+    letter-spacing: .3px;
+  }
+  .scan-hint { margin-top: 3mm; font-size: 11pt; color: #6b6e73; }
+  /* Voetband */
+  .voet {
+    margin-top: auto;
+    padding: 12mm 18mm 14mm;
+    border-top: 1pt solid #e3e4e6;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 10.5pt;
+  }
+  .contact { text-align: left; }
+  .contact .org { font-weight: 700; font-size: 12pt; }
+  .contact.embridge .org { color: #00529b; }
+  .contact .pers { color: #6b6e73; }
+  .payoff { text-align: right; color: #6b6e73; }
+  .perfact-wm { font-weight: 700; font-size: 13pt; letter-spacing: -.5px; }
+  .perfact-wm .licht { color: #a0a2a5; }
+  .perfact-wm .donker { color: #53565A; }
+  .perfact-wm .f { border-bottom: 2px solid #53565A; padding-bottom: 1px; }
+  .payoff .pay { font-style: italic; display: block; margin-top: 2mm; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="kop">
+      <div class="merk">Embridge <span class="x">×</span> Perfact</div>
+      <div class="tagline">Samen sterker in de energietransitie</div>
+    </div>
+
+    <div class="body">
+      <h1>Scan &amp; ontdek onze propositie</h1>
+      <p class="sub">Van vergunning tot oplevering — één partnerschap dat uw energietransitie-project ontlast, versnelt en de kwaliteit borgt.</p>
+      <div class="qr-card">
+        <img src="images/qr-embridge-perfact.png" alt="QR-code">
+      </div>
+      <div class="url">bessje.github.io/embridge-perfact</div>
+      <div class="scan-hint">Richt je camera op de code om de pagina te openen</div>
+    </div>
+
+    <div class="voet">
+      <div class="contact embridge">
+        <div class="org">Embridge Nederland</div>
+        <div class="pers">Miguel Blokland · www.embridge.nl</div>
+      </div>
+      <div class="payoff">
+        <span class="perfact-wm"><span class="licht">per</span><span class="donker"><span class="f">f</span>act</span></span> Group · Floris Bessems
+        <span class="pay">Make the difference</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
