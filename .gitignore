@@ -1,0 +1,11 @@
+# Vertrouwelijke bronbestanden — NIET publiceren
+*.docx
+*.pdf
+
+# Lokale Claude Code-instellingen
+.claude/
+
+# Systeembestanden
+desktop.ini
+Thumbs.db
+.DS_Store
