@@ -1,11 +1,13 @@
-# Vertrouwelijke bronbestanden — NIET publiceren
-*.docx
-*.pdf
+# LET OP: deze repo is PUBLIEK en staat in een werkmap met klantprojecten
+# (DXF's, schouwfoto's, offertes). Daarom een witte lijst in plaats van een
+# zwarte: alles wordt genegeerd, en alleen de site is expliciet toegelaten.
+#
+# Voeg je een bestand aan de site toe, zet het er dan hieronder bij —
+# anders ziet git het niet.
 
-# Lokale Claude Code-instellingen
-.claude/
+/*
 
-# Systeembestanden
-desktop.ini
-Thumbs.db
-.DS_Store
+!.gitignore
+!index.html
+!README.md
+!images/
